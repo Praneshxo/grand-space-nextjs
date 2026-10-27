@@ -4,9 +4,23 @@ import { useState, useEffect } from 'react';
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [navHidden, setNavHidden] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50);
+    let lastScrollY = window.scrollY;
+    const onScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrolled(currentScrollY > 50);
+
+      if (currentScrollY < 100) {
+        setNavHidden(false);
+      } else if (currentScrollY > lastScrollY + 8) {
+        setNavHidden(true);
+      } else if (currentScrollY < lastScrollY - 8) {
+        setNavHidden(false);
+      }
+      lastScrollY = currentScrollY;
+    };
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
@@ -15,8 +29,8 @@ export default function Header() {
 
   return (
     <>
-      <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
-        <div className="logo">grand space<br /><small style={{ fontSize: '0.65rem', letterSpacing: '3px' }}>INTERIOR DESIGN STUDIO</small></div>
+      <nav className={`nav ${scrolled ? 'scrolled' : ''} ${navHidden && !open ? 'nav-hidden' : ''}`}>
+        <div className="logo">GS Interior Studio</div>
         <div className={`hamburger ${open ? 'active' : ''}`} onClick={() => setOpen(!open)}>
           <span></span><span></span><span></span>
         </div>

@@ -1,7 +1,7 @@
 export default function HowWeWork() {
   return (
     <section className="how-we-work fade-up">
-      <div>
+      <div className="how-we-work-copy">
         <div style={{ letterSpacing: '3px', fontSize: '0.8rem', color: '#a89b8c' }}>HOW WE WORK</div>
         <h2>each project is<br />unique in design</h2>
         <a href="#process" className="oval-btn" style={{ borderColor: '#8a8175', color: '#8a8175' }}>THE PROCESS</a>

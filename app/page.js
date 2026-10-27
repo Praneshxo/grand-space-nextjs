@@ -56,26 +56,12 @@ export default function Home() {
       });
     });
 
-    // Paper-like service panels reveal one at a time as the visitor scrolls.
-    gsap.utils.toArray('.service-panel').forEach((panel) => {
-      const bend = panel.classList.contains('service-panel-reverse') ? -7 : 7;
-      gsap.fromTo(panel,
-        { opacity: 0, y: 70, rotateY: bend, skewY: bend / 3, clipPath: 'inset(8% 0 8% 0)' },
-        {
-          opacity: 1,
-          y: 0,
-          rotateY: 0,
-          skewY: 0,
-          clipPath: 'inset(0% 0 0% 0)',
-          duration: 1.15,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: panel,
-            start: 'top 82%',
-            toggleActions: 'play none none reverse',
-          },
-        },
-      );
+    gsap.from('.services-showcase', {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: '.services-showcase', start: 'top 82%' },
     });
 
     // Revert animations and ScrollTriggers when leaving the page or during

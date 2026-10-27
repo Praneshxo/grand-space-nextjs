@@ -7,7 +7,7 @@ export default function Projects() {
 
   return (
     <section id="projects" className="fade-up">
-      <div className="container">
+      <div className="container projects-container">
         <h2 className="section-title">our latest projects</h2>
         <a href="/gallery" className="view-all">VIEW ALL</a>
         <div className="project-grid">

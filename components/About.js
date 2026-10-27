@@ -1,20 +1,26 @@
 export default function About() {
   return (
-    <section id="about" className="fade-up">
-      <div className="container about-grid">
-        <div>
-          <h2>Welcome to Grand Space Interiors</h2>
-          <p>At Grand Space Interiors, we believe in the power of design to transform spaces and elevate lifestyles. Specializing in bespoke interior design solutions, we bring creativity, innovation, and attention to detail to every project. Whether you're looking to revamp your home, office, or commercial space, our experienced team is here to turn your vision into reality.</p>
-          <p style={{ marginTop: 20 }}>Founded with a passion for transforming spaces, we specialize in creating personalized environments that reflect our clients' unique styles and needs. Our collaborative approach ensures their vision is at the heart of every design.</p>
+    <section id="about" className="about-section fade-up">
+      <div className="container about-editorial">
+        <div className="about-intro">
+          <p className="section-eyebrow">THE GRAND SPACE WAY</p>
+          <h2>Interiors that feel <em>entirely yours.</em></h2>
+          <p className="about-lead">At Grand Space Interiors, we believe thoughtful design transforms the way you live, work and feel at home.</p>
+          <a href="#contact" className="text-link">START A CONVERSATION <span>↗</span></a>
         </div>
-        <div>
-          <h3 style={{ fontSize: '1.8rem', marginBottom: 16 }}>Our Design Philosophy</h3>
-          <p>We create spaces that reflect your unique style and enhance your lifestyle. Our approach blends creativity and functionality, ensuring every design is both beautiful and practical. We prioritize understanding your needs to craft interiors that inspire and comfort.</p>
-          <ul style={{ marginTop: 20, listStyle: 'none' }}>
-            <li>✓ Customized Designs tailored to your unique preferences.</li>
-            <li>✓ Expert Team with creativity and technical expertise.</li>
-            <li>✓ Seamless Process from concept to completion.</li>
-          </ul>
+        <figure className="about-image">
+          <img src="/images/living-commercial.jpg" alt="Warm contemporary interior designed by Grand Space" />
+          <figcaption>Designed around your life, down to the last detail.</figcaption>
+        </figure>
+        <div className="about-philosophy">
+          <span className="about-number">01</span>
+          <h3>Our design philosophy</h3>
+          <p>We combine creativity, function and close collaboration to create spaces that are beautiful to look at and effortless to live in.</p>
+          <div className="about-principles">
+            <span>Personalized design</span>
+            <span>Crafted with care</span>
+            <span>Seamless delivery</span>
+          </div>
         </div>
       </div>
     </section>
